@@ -4,7 +4,6 @@ class Movies extends Component {
         state = {
             movies: []
         };
-    }
   
     render() {
       return (
@@ -22,5 +21,5 @@ class Movies extends Component {
         </div>
       );
     }
-
+  }
   export default Movies;
