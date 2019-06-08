@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 
 class Featured extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            movies: []
-        };
-    }
-  
-    componentDidMount() {
-      fetch('https://ghibliapi.herokuapp.com/films')
-        .then(response => response.json())
-        .then(movies => this.setState({ movies }));
-    }
+      state = { movies:[] }
   
     render() {
       return (

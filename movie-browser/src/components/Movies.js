@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 
 class Movies extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
+        state = {
             movies: []
         };
-    }
-  
-    componentDidMount() {
-      fetch('https://ghibliapi.herokuapp.com/films')
-        .then(response => response.json())
-        .then(movies => this.setState({ movies }));
     }
   
     render() {
@@ -31,6 +22,5 @@ class Movies extends Component {
         </div>
       );
     }
-  }
 
   export default Movies;
