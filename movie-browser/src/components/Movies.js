@@ -5,8 +5,8 @@ import Popup from 'reactjs-popup'
 const Movies = props => {
 
       return (
-        <div className="bg-blue-400 content">
-          <h1 className=" text-center font-mono text-3xl italic">All Movies</h1>
+        <div className="bg-blue-400 content py-8">
+          <h1 className="py-8 text-center font-mono text-3xl italic">All Movies</h1>
           <div className="text-center">
           <button className="view-all mb-2" onClick={props.toggleMovieSection}>View All Movies</button>
           </div>
@@ -24,6 +24,7 @@ const Movies = props => {
               modal
               closeOnDocumentClick
             >
+              <div className="bg-gray-500">
               <div><span className="font-bold">Title:</span> <span className="italic">{movie.title}</span> </div>
               <div className="flex justify-center"> <img src="https://via.placeholder.com/150" alt="placeholder" /> </div>
               <div><span className="font-bold">Description:</span> <span className="italic">{movie.description}</span> </div>
@@ -31,6 +32,7 @@ const Movies = props => {
               <div><span className="font-bold">Producer:</span> <span className="italic">{movie.producer}</span> </div>
               <div><span className="font-bold">Release Date:</span> <span className="italic">{movie.release_date}</span> </div>
               <div><span className="font-bold">Score:</span> <span className="italic">{movie.rt_score}</span> </div>
+              </div>
             </Popup>
           </div>
           )}

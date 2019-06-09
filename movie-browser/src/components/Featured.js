@@ -5,8 +5,8 @@ const Featured = props => {
 
       return (
         <div className="bg-blue-400">
-          <h1 className=" text-center font-mono text-3xl italic">Featured Movies</h1>
-          <div className="flex flex-wrap items-center">
+          <h1 className="py-8 text-center font-mono text-3xl italic">Featured Movies</h1>
+          <div className="flex flex-wrap items-center pb-8">
             {props.movies.slice(0, 6).map(movie => 
             <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/6 xl:w-1/6 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5 m-0 sm:m-2 md:m-0 lg:m-0 xl:m-0">
             <div className="font-semibold">{movie.title}</div>
@@ -19,6 +19,7 @@ const Featured = props => {
               modal
               closeOnDocumentClick
             >
+              <div className="bg-gray-500">
               <div><span className="font-bold">Title:</span> <span className="italic">{movie.title}</span> </div>
               <div className="flex justify-center"> <img src="https://via.placeholder.com/150" alt="placeholder" /> </div>
               <div><span className="font-bold">Description:</span> <span className="italic">{movie.description}</span> </div>
@@ -26,6 +27,7 @@ const Featured = props => {
               <div><span className="font-bold">Producer:</span> <span className="italic">{movie.producer}</span> </div>
               <div><span className="font-bold">Release Date:</span> <span className="italic">{movie.release_date}</span> </div>
               <div><span className="font-bold">Score:</span> <span className="italic">{movie.rt_score}</span> </div>
+              </div>
             </Popup>
           </div>
           )}
