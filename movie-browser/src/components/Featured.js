@@ -5,7 +5,7 @@ const Featured = props => {
 
       return (
         <div className="bg-blue-400">
-          <h1 className="py-8 text-center font-mono text-3xl italic">Featured Movies</h1>
+          <h1 className="py-8 text-center font-mono text-4xl italic">Featured Movies</h1>
           <div className="flex flex-wrap items-center pb-8">
             {props.movies.slice(0, 6).map(movie => 
             <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/6 xl:w-1/6 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5 m-0 sm:m-2 md:m-0 lg:m-0 xl:m-0">

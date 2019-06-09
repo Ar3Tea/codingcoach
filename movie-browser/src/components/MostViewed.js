@@ -5,7 +5,7 @@ const MostViewed = props => {
 
       return (
         <div className="bg-black py-8">
-          <h1 className="py-8 text-white pt-5 text-center font-mono text-3xl italic">Most Viewed Movies</h1>
+          <h1 className="py-8 text-white pt-5 text-center font-mono text-4xl italic">Most Viewed Movies</h1>
           <div className="flex flex-wrap items-center mx-4 pb-4">
             {props.movies.slice(3, 9).map(movie => 
             <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/3 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5 sm:m-2 md:m-0 lg:m-0 xl:m-0">

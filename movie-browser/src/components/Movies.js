@@ -6,7 +6,7 @@ const Movies = props => {
 
       return (
         <div className="bg-blue-400 content py-8">
-          <h1 className="py-8 text-center font-mono text-3xl italic">All Movies</h1>
+          <h1 className="py-8 text-center font-mono text-4xl italic">All Movies</h1>
           <div className="text-center">
           <button className="view-all mb-2" onClick={props.toggleMovieSection}>View All Movies</button>
           </div>
