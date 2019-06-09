@@ -1,32 +1,11 @@
-import React, { Component } from 'react';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
-import Movies from './components/Movies.js';
 
-class AllMovies extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
-  }
+const URL = 'https://ghibliapi.herokuapp.com/';
 
-  toggle() {
-    this.setState(state => ({ collapse: !state.collapse }));
-  }
-
-  render() {
-    return (
-      <div>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
-        <Collapse isOpen={this.state.collapse}>
-          <Card>
-            <CardBody>
-                <Movies />
-            </CardBody>
-          </Card>
-        </Collapse>
-      </div>
-    );
-  }
+const fetchMovies = param => {
+   fetch(`${URL}${param}`)
+        .then(response => response.json())
+        .then(data => this.setState({movies: data})
+        })
 }
 
-export default AllMovies;
+export default fetchMovies;

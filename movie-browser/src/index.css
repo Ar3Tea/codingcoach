@@ -1,10 +1,13 @@
-@tailwind base;
+.footer,
+.push {
+  height: 150px;
+}
 
-@tailwind components;
+.content {
+  min-height: calc(74.5vh - 40px);
+}
 
-@tailwind utilities;
-
-body {
-  margin: 0;
-  padding: 0;
+.view-all {
+    border: 1px solid;
+    padding: 0.5em;
 }
