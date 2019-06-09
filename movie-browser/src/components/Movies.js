@@ -13,7 +13,7 @@ const Movies = props => {
         {props.shouldShowAllMovies ? (
           <div className="flex flex-row flex-wrap items-center justify-center">
             {props.movies.map(movie => 
-            <div className="w-1/6 text-center border-solid border-4 border-black m-5 self-auto shadow-2xl">
+            <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/6 xl:w-1/6 text-center border-solid border-4 border-black m-5 sm:m-2 md:m-0 lg:m-5 xl:m-5 self-auto shadow-2xl">
             <div className="font-semibold">{movie.title}</div>
             <div className="flex justify-center">
             <img src="https://via.placeholder.com/150" alt="placeholder" />
