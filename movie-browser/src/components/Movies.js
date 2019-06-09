@@ -27,11 +27,13 @@ class Movies extends Component {
           <button className="view-all" onClick={this.toggleMovieSection}>View All Movies</button>
           </div>
         {shouldShowAllMovies ? (
-          <div className="flex flex-row flex-wrap items-center">
+          <div className="flex flex-row flex-wrap items-center justify-center">
             {this.state.movies.map(movie => 
             <div className="w-1/6 text-center border-solid border-4 border-black m-5 self-auto shadow-2xl">
             <div className="font-semibold">{movie.title}</div>
-
+            <div className="flex justify-center">
+            <img src="https://via.placeholder.com/150" alt="placeholder" />
+            </div>
             <div>{movie.description.slice(0, 50)}...</div>
             <Popup
               trigger={<button className="button"> Read More </button>}
@@ -39,6 +41,7 @@ class Movies extends Component {
               closeOnDocumentClick
             >
               <div><span className="font-bold">Title:</span> <span className="italic">{movie.title}</span> </div>
+              <div className="flex justify-center"> <img src="https://via.placeholder.com/150" alt="placeholder" /> </div>
               <div><span className="font-bold">Description:</span> <span className="italic">{movie.description}</span> </div>
               <div><span className="font-bold">Director:</span> <span className="italic">{movie.director}</span> </div>
               <div><span className="font-bold">Producer:</span> <span className="italic">{movie.producer}</span> </div>

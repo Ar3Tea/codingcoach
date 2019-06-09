@@ -16,11 +16,12 @@ class App extends Component {
 //    fetchMovies('films');
 
   render() {
+    const { movies } = this.state;
     return (
       <div>
         <Header />
-        <Featured movies={this.props.movies} />
-        <Movies />
+        <Featured movies={movies} />
+        <Movies movies ={movies} />
         <Footer />
       </div>
     );
