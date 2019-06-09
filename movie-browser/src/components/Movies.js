@@ -31,8 +31,8 @@ class Movies extends Component {
             {this.state.movies.map(movie => 
             <div className="w-1/6 text-center border-solid border-4 border-black m-5 self-auto shadow-2xl">
             <div className="font-semibold">{movie.title}</div>
-            <div>{movie.rt_score}</div>
-            <div>{movie.description.slice(0, 50)}</div>
+
+            <div>{movie.description.slice(0, 50)}...</div>
             <Popup
               trigger={<button className="button"> Read More </button>}
               modal

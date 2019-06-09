@@ -18,8 +18,8 @@ class Featured extends Component {
             {this.state.movies.slice(0, 6).map(movie => 
             <div className="w-1/6 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5">
             <div className="font-semibold">{movie.title}</div>
-            <div>{movie.rt_score}</div>
-            <div>{movie.description.slice(0, 50)}</div>
+
+            <div>{movie.description.slice(0, 50)}...</div>
             <Popup
               trigger={<button className="button"> Read More </button>}
               modal
