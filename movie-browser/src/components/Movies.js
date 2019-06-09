@@ -1,34 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Popup from 'reactjs-popup'
 
 
-class Movies extends Component {
-        state = {
-            movies: [],
-            shouldShowAllMovies: false
-        };
+const Movies = props => {
 
-        componentDidMount() {
-          fetch('https://ghibliapi.herokuapp.com/films')
-          .then(response => response.json())
-          .then(data => this.setState({ movies: data }));
-        } 
-      
-        toggleMovieSection = () => {
-          this.setState({ shouldShowAllMovies: !this.state.shouldShowAllMovies });
-        };
-      
-      render() {
-        const { shouldShowAllMovies } = this.state;
       return (
         <div className="bg-blue-400 content">
           <h1 className=" text-center font-mono text-3xl italic">All Movies</h1>
           <div className="text-center">
-          <button className="view-all" onClick={this.toggleMovieSection}>View All Movies</button>
+          <button className="view-all" onClick={props.toggleMovieSection}>View All Movies</button>
           </div>
-        {shouldShowAllMovies ? (
+        {props.shouldShowAllMovies ? (
           <div className="flex flex-row flex-wrap items-center justify-center">
-            {this.state.movies.map(movie => 
+            {props.movies.map(movie => 
             <div className="w-1/6 text-center border-solid border-4 border-black m-5 self-auto shadow-2xl">
             <div className="font-semibold">{movie.title}</div>
             <div className="flex justify-center">
@@ -36,7 +20,7 @@ class Movies extends Component {
             </div>
             <div>{movie.description.slice(0, 50)}...</div>
             <Popup
-              trigger={<button className="button"> Read More </button>}
+              trigger={<button className="read-more"> Read More </button>}
               modal
               closeOnDocumentClick
             >
@@ -54,6 +38,5 @@ class Movies extends Component {
           ) : null}
         </div>
       );
-    }
   }
   export default Movies;

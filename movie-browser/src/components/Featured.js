@@ -15,7 +15,7 @@ const Featured = props => {
             </div>
             <div>{movie.description.slice(0, 50)}...</div>
             <Popup
-              trigger={<button className="button"> Read More </button>}
+              trigger={<button className="read-more"> Read More </button>}
               modal
               closeOnDocumentClick
             >
