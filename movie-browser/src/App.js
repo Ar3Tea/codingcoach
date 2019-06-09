@@ -3,6 +3,7 @@ import Header from './components/Header.js';
 import Featured from './components/Featured.js';
 import Movies from './components/Movies.js';
 import Footer from './components/Footer.js';
+import MostViewed from './components/MostViewed.js';
 //import fetchMovies from './components/Api.js';
 
 class App extends Component {
@@ -28,6 +29,7 @@ toggleMovieSection = () => {
       <div>
         <Header />
         <Featured movies={movies} />
+        <MostViewed movies={movies} />
         <Movies movies={movies} toggleMovieSection={this.toggleMovieSection} shouldShowAllMovies={this.state.shouldShowAllMovies} />
         <Footer />
       </div>
