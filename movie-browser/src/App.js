@@ -4,7 +4,7 @@ import Featured from './components/Featured';
 import Movies from './components/Movies';
 import Footer from './components/Footer';
 import MostViewed from './components/MostViewed';
-import fetchMovies from './Api.js';
+import fetchMovies from './Api';
 
 class App extends Component {
   state = { 
