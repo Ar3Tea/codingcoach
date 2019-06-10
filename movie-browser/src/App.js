@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from './components/Header.js';
-import Featured from './components/Featured.js';
-import Movies from './components/Movies.js';
-import Footer from './components/Footer.js';
-import MostViewed from './components/MostViewed.js';
-//import fetchMovies from './src/Api.js';
+import Header from './components/Header';
+import Featured from './components/Featured';
+import Movies from './components/Movies';
+import Footer from './components/Footer';
+import MostViewed from './components/MostViewed';
+import fetchMovies from './Api.js';
 
 class App extends Component {
   state = { 
@@ -16,11 +16,9 @@ class App extends Component {
   componentDidMount() {
     this.setState({ isLoading: true });
 
-    fetch('https://ghibliapi.herokuapp.com/films')
-    .then(response => response.json())
+    fetchMovies('films')
     .then(data => this.setState({ movies: data, isLoading: false }));
-  }
-//    fetchMovies('films');
+}
 
 toggleMovieSection = () => {
   this.setState({ shouldShowAllMovies: !this.state.shouldShowAllMovies });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Chewie from '../chewbacca-512.png';
+import Chewie from '../styles/chewbacca-512.png';
 
 class Header extends Component {
   render() {
