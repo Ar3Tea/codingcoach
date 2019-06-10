@@ -1,13 +1,26 @@
-.footer,
+/*.footer,
 .push {
   height: 150px;
 }
 
 .content {
   min-height: calc(74.5vh - 40px);
-}
+}*/
 
 .view-all {
-    border: 1px solid;
-    padding: 0.5em;
+  border: 1px solid;
+  padding: 0.5em;
+  background: #CECACA;
 }
+
+.read-more {
+  border: 1px solid;
+  padding: 0.5em;
+  background: #1260E8;
+  margin-bottom: 1em;
+}
+
+.wookie-icon {
+  height: 8em;
+}
+
