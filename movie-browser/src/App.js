@@ -4,18 +4,21 @@ import Featured from './components/Featured.js';
 import Movies from './components/Movies.js';
 import Footer from './components/Footer.js';
 import MostViewed from './components/MostViewed.js';
-//import fetchMovies from './components/Api.js';
+//import fetchMovies from './src/Api.js';
 
 class App extends Component {
   state = { 
     movies: [],
-    shouldShowAllMovies: false
+    shouldShowAllMovies: false,
+    isLoading: false
    };
 
   componentDidMount() {
+    this.setState({ isLoading: true });
+
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(response => response.json())
-    .then(data => this.setState({ movies: data }));
+    .then(data => this.setState({ movies: data, isLoading: false }));
   }
 //    fetchMovies('films');
 
@@ -28,9 +31,9 @@ toggleMovieSection = () => {
     return (
       <div>
         <Header />
-        <Featured movies={movies} />
-        <MostViewed movies={movies} />
-        <Movies movies={movies} toggleMovieSection={this.toggleMovieSection} shouldShowAllMovies={this.state.shouldShowAllMovies} />
+        <Featured featuredMovies={movies} />
+        <MostViewed mostViewedMovies={movies} />
+        <Movies allMovies={movies} toggleMovieSection={this.toggleMovieSection} shouldShowAllMovies={this.state.shouldShowAllMovies} />
         <Footer />
       </div>
     );

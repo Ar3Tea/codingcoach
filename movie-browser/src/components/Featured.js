@@ -7,13 +7,13 @@ const Featured = props => {
         <div className="bg-blue-400">
           <h1 className="py-8 text-center font-mono text-4xl italic">Featured Movies</h1>
           <div className="flex flex-wrap items-center pb-8">
-            {props.movies.slice(0, 6).map(movie => 
-            <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/6 xl:w-1/6 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5 m-0 sm:m-2 md:m-0 lg:m-0 xl:m-0">
-            <div className="font-semibold">{movie.title}</div>
-            <div className="flex justify-center">
-            <img src="https://via.placeholder.com/150" alt="placeholder" />
-            </div>
-            <div>{movie.description.slice(0, 50)}...</div>
+            {props.featuredMovies.slice(0, 6).map(movie => 
+            <div className="w-full xs:w-full sm:w-full md:w-1/2 lg:w-1/6 xl:w-1/6 mb-4 text-center border-solid border-4 border-gray-400 pt-6 pb-5 m-0 sm:m-2 md:m-0 lg:m-0 xl:m-0" key={movie.id}>
+              <div className="font-semibold">{movie.title}</div>
+              <div className="flex justify-center">
+                <img src="https://via.placeholder.com/150" alt="placeholder" />
+              </div>
+              <div>{movie.description.slice(0, 50)}...</div>
             <Popup
               trigger={<button className="read-more"> Read More </button>}
               modal
