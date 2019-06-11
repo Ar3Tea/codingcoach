@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import Header from './components/Header.js';
-import Featured from './components/Featured.js';
-import Movies from './components/Movies.js';
-import Footer from './components/Footer.js';
-import MostViewed from './components/MostViewed.js';
-//import fetchMovies from './components/Api.js';
+import Header from './components/Header';
+import Featured from './components/Featured';
+import Movies from './components/Movies';
+import Footer from './components/Footer';
+import MostViewed from './components/MostViewed';
+import fetchMovies from './Api';
 
 class App extends Component {
   state = { 
     movies: [],
-    shouldShowAllMovies: false
+    shouldShowAllMovies: false,
+    isLoading: false
    };
 
   componentDidMount() {
-    fetch('https://ghibliapi.herokuapp.com/films')
-    .then(response => response.json())
-    .then(data => this.setState({ movies: data }));
-  }
-//    fetchMovies('films');
+    this.setState({ isLoading: true });
+
+    fetchMovies('films')
+    .then(data => this.setState({ movies: data, isLoading: false }));
+}
 
 toggleMovieSection = () => {
   this.setState({ shouldShowAllMovies: !this.state.shouldShowAllMovies });
@@ -28,9 +29,9 @@ toggleMovieSection = () => {
     return (
       <div>
         <Header />
-        <Featured movies={movies} />
-        <MostViewed movies={movies} />
-        <Movies movies={movies} toggleMovieSection={this.toggleMovieSection} shouldShowAllMovies={this.state.shouldShowAllMovies} />
+        <Featured featuredMovies={movies} />
+        <MostViewed mostViewedMovies={movies} />
+        <Movies allMovies={movies} toggleMovieSection={this.toggleMovieSection} shouldShowAllMovies={this.state.shouldShowAllMovies} />
         <Footer />
       </div>
     );
